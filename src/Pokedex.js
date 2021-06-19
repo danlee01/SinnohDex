@@ -41,7 +41,7 @@ function SinnohDex() {
         });
     }, []);
 
-    const test = () => {
+    const testClick = () => {
         console.log(entries.length);
 
         if (entry < entries.length-1) {
@@ -51,6 +51,18 @@ function SinnohDex() {
         }
         
         console.log(`Current entry is ${entry}`);
+    }
+
+    const testWheel = (e) => {
+        if (entry < entries.length-1) {
+            if (e.deltaY > 0) {
+                setEntry(entry+1);
+            } else if (entry !== 0) {
+                setEntry(entry-1);
+            }
+        } else {
+            setEntry(0);
+        }
     }
 
     const getName = (name) => {
@@ -65,13 +77,16 @@ function SinnohDex() {
     } 
 
     return entries ? (
-        <div onClick={test}>
+        <div onClick={testClick}
+             onWheel={testWheel}
+        >
+             
             <SinnohDexView name={getName(entries[entry].pokemon_species.name)}/>
         </div>
     ) : <div>loading</div> 
 }
 
-export default SinnohDexScroller;
+export default SinnohDex;
 
 /*
 ----------------------- NOTES -------------------------------
@@ -84,8 +99,9 @@ name: name of game
 
 ----------------------- SCRATCH -------------------------------
 SinnohDexScroller
-    props: name of entry
-           index of entry
+    props: pokedex entries
+    will be an animated list 
+
 
 SinnohDexEntry
     info: weight of pokemon
