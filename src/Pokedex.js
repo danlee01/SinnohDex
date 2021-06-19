@@ -86,5 +86,13 @@ name: name of game
 SinnohDexScroller
     props: name of entry
            index of entry
+
+SinnohDexEntry
+    info: weight of pokemon
+          height of pokemon
+          back/front sprite.png
+          stats
+            A pokemon can have many stat combos, we choose whatever is first in API response
+
     
 */
