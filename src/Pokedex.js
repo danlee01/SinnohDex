@@ -1,34 +1,60 @@
 import React, { useState, useEffect } from 'react'
 import Pokedex from 'pokedex-promise-v2';
+import { Lethargy } from 'lethargy';
+import { useWheel } from 'react-use-gesture'; // use useGesture later to include drag?
 
-var p = new Pokedex();
+var p = new Pokedex();  // change to const later?
+var lethargy = new Lethargy()
 
 function SinnohDexView(props) {
     return (
-        <img src={`https://play.pokemonshowdown.com/sprites/xyani/${props.name}.gif`}/>
+        <div className={'split left'}>
+            <div className={'centered'}>
+                <img src={`https://play.pokemonshowdown.com/sprites/xyani/${props.name}.gif`}/>
+            </div>
+        </div>
     )
 }
 
-function SinnohDexScroller(props) {
+function SinnohDexScroller({entries, entry, setEntry, restProps}) {
     const [pokemon, setPokemon] = useState(null);
 
-    useEffect(() => {
-        p.getPokemonByName("piplup")
-    .then(function(response) {
-      console.log(response);
-      setPokemon(response);
-    })
-    .catch(function(error) {
-      console.log('There was an ERROR: ', error);
-    });
+    const slides = (entries) ? entries.map(x => x.pokemon_species.name) : null
+    const clamp = (value, min, max) => Math.max(Math.min(max, value), min) // stay in bounds
+
+    const bind = useWheel(({ event, last, memo: wait = false }) => {
+        if (!last) {
+            const s = lethargy.check(event);
+            if (s) {
+                if (!wait) {
+                    setEntry((i) => clamp(i - s, 0, slides.length - 1));
+                    return true;
+                }
+            } else return false
+        } else {
+            return false
+        }
     })
 
-    return <div>testing PokemonByName function!</div>
-}
+    if (slides) {
+        return (
+            <div className={'split right'} {...bind()}>
+                <div className="slider" style={{ transform: `translateY(${-entry * 82.5}vh)` }}>
+                    {slides.map((i) => (
+                    <div key={i}>{i}</div>
+                    ))}
+                </div>
+            </div>
+        )
+    } else {
+        return <div>LOADING!</div>
+    }
+    
+    }
 
 function SinnohDex() {
     const [entries, setEntries] = useState(null);
-    const [entry, setEntry] = useState(0)
+    const [entry, setEntry] = useState(0);
 
     useEffect(() => {
         p.getPokedexByName('original-sinnoh') // with Promise
@@ -42,7 +68,7 @@ function SinnohDex() {
     }, []);
 
     const testClick = () => {
-        console.log(entries.length);
+        //console.log(entries.map(x => x.pokemon_species.name));  //test
 
         if (entry < entries.length-1) {
             setEntry(entry+1);
@@ -52,7 +78,7 @@ function SinnohDex() {
         
         console.log(`Current entry is ${entry}`);
     }
-
+/*
     const testWheel = (e) => {
         if (entry < entries.length-1) {
             if (e.deltaY > 0) {
@@ -64,9 +90,9 @@ function SinnohDex() {
             setEntry(0);
         }
     }
-
+*/
     const getName = (name) => {
-        /* Since PokeAPI names don't always match with Pokemon Showdown assets */
+        /* HOTFIX: PokeAPI names don't always match with Pokemon Showdown assets */
         if (name === "mr-mime") {
             return "mrmime";
         } else if (name === "mime-jr") {
@@ -78,10 +104,15 @@ function SinnohDex() {
 
     return entries ? (
         <div onClick={testClick}
-             onWheel={testWheel}
+             
         >
              
             <SinnohDexView name={getName(entries[entry].pokemon_species.name)}/>
+            <SinnohDexScroller 
+                entries={entries} 
+                entry={entry}
+                setEntry={setEntry} 
+            />
         </div>
     ) : <div>loading</div> 
 }
@@ -92,7 +123,15 @@ export default SinnohDex;
 ----------------------- NOTES -------------------------------
 1. cycle thru pokedex on click
 2. Create scroll wheel component that displays names
-    - works with dragging, scrolling
+    X DRAGGING 
+        X useDrag
+        XX no more dragging, we will use a custom sidebar
+    - WHEELING
+        - useWheel and Lethargy library
+    !! sync the pokemon sprites with scrolling of menu
+    !! pass entries down as props to scroll
+3. Make Pokemon Entry
+    - stats, nature, etc
 
 ----------------------- PROPS -------------------------------
 name: name of game

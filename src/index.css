@@ -17,7 +17,7 @@ body {
   position: fixed;
   overflow: hidden;
 }
-
+/*
 #root {
   background: lightblue;
   position: fixed;
@@ -48,4 +48,62 @@ body {
   will-change: transform;
   border-radius: 10px;
   box-shadow: 0 12.5px 100px -10px rgba(50, 50, 73, 0.4), 0 10px 10px -10px rgba(50, 50, 73, 0.3);
+}*/
+
+/* SCROLLING */
+.slider {
+  transition: transform 350ms ease-in-out;
+  overflow: hidden;
+}
+
+.slider > div {
+  font-size: 10vw;
+  color: white;
+  min-height: 80vh;
+  background-color: royalblue;
+  margin: 2.5vh 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+
+.split {
+  background: lightblue;
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+  overflow: hidden;
+}
+
+/* Control the left side */
+.left {
+  left: 0;
+  background: lightblue;
+}
+
+/* Control the right side */
+.right {
+  right: 0;
+  background-color: red;
+}
+
+/* If you want the content centered horizontally and vertically */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/* Style the image inside the centered container, if needed */
+.centered img {
+  width: 150px;
 }
