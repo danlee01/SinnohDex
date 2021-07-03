@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Pokedex from 'pokedex-promise-v2';
 import { Lethargy } from 'lethargy';
 import { useWheel } from 'react-use-gesture'; // use useGesture later to include drag?
+import Pokeball from './images/pokeball.svg'
 
 var p = new Pokedex();  // change to const later?
 var lethargy = new Lethargy()
@@ -19,7 +20,7 @@ function SinnohDexView(props) {
 function SinnohDexScroller({entries, entry, setEntry, restProps}) {
     const [pokemon, setPokemon] = useState(null);
 
-    const slides = (entries) ? entries.map(x => x.pokemon_species.name) : null
+    const slides = (entries) ? entries.map(x => x.pokemon_species.name.toUpperCase()) : null
     const clamp = (value, min, max) => Math.max(Math.min(max, value), min) // stay in bounds
 
     const bind = useWheel(({ event, last, memo: wait = false }) => {
@@ -36,12 +37,28 @@ function SinnohDexScroller({entries, entry, setEntry, restProps}) {
         }
     })
 
+    const formatEntry = (number) => {
+        var len = Math.log(number) * Math.LOG10E + 1 | 0;
+        console.log(`${len}`)
+        if (len === 1) {
+            return '00' + number;
+        } else if (len === 2) {
+            return '0' + number;
+        } else {
+            return number;
+        }
+    }
+
     if (slides) {
         return (
             <div className={'split right'} {...bind()}>
-                <div className="slider" style={{ transform: `translateY(${-entry * 82.5}vh)` }}>
-                    {slides.map((i) => (
-                    <div key={i}>{i}</div>
+                <div className="slider" style={{ transform: `translateY(${-entry * 22.5}vh)` }}>
+                    {slides.map((i, index) => (
+                    <div key={i} className='cell'>
+                        <img src={Pokeball}/>
+                        <div className='entry-number'>{formatEntry(index+1)}</div>
+                        {i}
+                    </div>
                     ))}
                 </div>
             </div>

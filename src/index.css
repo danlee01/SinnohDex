@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 * {
   box-sizing: border-box;
@@ -57,16 +57,23 @@ body {
 }
 
 .slider > div {
-  font-size: 10vw;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 3vw;
   color: white;
-  min-height: 80vh;
+  min-height: 20vh;
   background-color: royalblue;
   margin: 2.5vh 0;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  align-items:  center;
+  justify-content:left;
+  text-align:left;
   overflow: hidden;
+}
+
+.slider > div img {
+  margin: 2.5vh;
+  width: 16vh;
+  float: left;
 }
 
 
@@ -106,4 +113,8 @@ body {
 /* Style the image inside the centered container, if needed */
 .centered img {
   width: 150px;
+}
+
+.entry-number {
+  margin: 3vh;
 }
