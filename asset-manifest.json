@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/https//:danlee01.github.io/SinnohDex/static/css/main.a617e044.chunk.css",
-    "main.js": "/https//:danlee01.github.io/SinnohDex/static/js/main.260faa46.chunk.js",
-    "main.js.map": "/https//:danlee01.github.io/SinnohDex/static/js/main.260faa46.chunk.js.map",
-    "runtime-main.js": "/https//:danlee01.github.io/SinnohDex/static/js/runtime-main.b56cdea8.js",
-    "runtime-main.js.map": "/https//:danlee01.github.io/SinnohDex/static/js/runtime-main.b56cdea8.js.map",
-    "static/js/2.7b8b2d50.chunk.js": "/https//:danlee01.github.io/SinnohDex/static/js/2.7b8b2d50.chunk.js",
-    "static/js/2.7b8b2d50.chunk.js.map": "/https//:danlee01.github.io/SinnohDex/static/js/2.7b8b2d50.chunk.js.map",
-    "static/js/3.8bb62ad3.chunk.js": "/https//:danlee01.github.io/SinnohDex/static/js/3.8bb62ad3.chunk.js",
-    "static/js/3.8bb62ad3.chunk.js.map": "/https//:danlee01.github.io/SinnohDex/static/js/3.8bb62ad3.chunk.js.map",
-    "index.html": "/https//:danlee01.github.io/SinnohDex/index.html",
-    "static/css/main.a617e044.chunk.css.map": "/https//:danlee01.github.io/SinnohDex/static/css/main.a617e044.chunk.css.map",
-    "static/js/2.7b8b2d50.chunk.js.LICENSE.txt": "/https//:danlee01.github.io/SinnohDex/static/js/2.7b8b2d50.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/https//:danlee01.github.io/SinnohDex/static/media/logo.6ce24c58.svg"
+    "main.css": "/SinnohDex/static/css/main.e61f0ead.chunk.css",
+    "main.js": "/SinnohDex/static/js/main.11a7999e.chunk.js",
+    "main.js.map": "/SinnohDex/static/js/main.11a7999e.chunk.js.map",
+    "runtime-main.js": "/SinnohDex/static/js/runtime-main.160da37a.js",
+    "runtime-main.js.map": "/SinnohDex/static/js/runtime-main.160da37a.js.map",
+    "static/js/2.67c6e3b5.chunk.js": "/SinnohDex/static/js/2.67c6e3b5.chunk.js",
+    "static/js/2.67c6e3b5.chunk.js.map": "/SinnohDex/static/js/2.67c6e3b5.chunk.js.map",
+    "static/js/3.5a24619e.chunk.js": "/SinnohDex/static/js/3.5a24619e.chunk.js",
+    "static/js/3.5a24619e.chunk.js.map": "/SinnohDex/static/js/3.5a24619e.chunk.js.map",
+    "index.html": "/SinnohDex/index.html",
+    "static/css/main.e61f0ead.chunk.css.map": "/SinnohDex/static/css/main.e61f0ead.chunk.css.map",
+    "static/js/2.67c6e3b5.chunk.js.LICENSE.txt": "/SinnohDex/static/js/2.67c6e3b5.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/SinnohDex/static/media/logo.6ce24c58.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.b56cdea8.js",
-    "static/js/2.7b8b2d50.chunk.js",
-    "static/css/main.a617e044.chunk.css",
-    "static/js/main.260faa46.chunk.js"
+    "static/js/runtime-main.160da37a.js",
+    "static/js/2.67c6e3b5.chunk.js",
+    "static/css/main.e61f0ead.chunk.css",
+    "static/js/main.11a7999e.chunk.js"
   ]
 }
