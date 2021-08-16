@@ -42,7 +42,7 @@ function App() {
 
   return (
     <div className="container text-center">
-      <h1>hi</h1>
+      <h1>SinnohDex</h1>
         <Posts posts={currentPosts} loading={loading} indexOfFirst={indexOfFirstPost}/>
         <Pagination postsPerPage={postsPerPage} totalPosts={posts.length} paginate={paginate} currentPage={currentPage} />
       <div className="footer">Made with ❤️ in React</div>
