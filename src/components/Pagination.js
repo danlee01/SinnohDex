@@ -11,9 +11,9 @@ const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
         if (number === currentPage) {
             return ((
                 <li key={number} className="page-item active">
-                    <a onClick={() => paginate(number)} href="!#" className="page-link">
+                    <div onClick={() => paginate(number)} className="page-link">
                         {number}
-                    </a>
+                    </div>
                 </li>
             ))
         } else {
