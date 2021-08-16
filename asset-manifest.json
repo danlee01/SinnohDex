@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/SinnohDex/static/css/main.e61f0ead.chunk.css",
+    "main.css": "/SinnohDex/static/css/main.30ea3ccb.chunk.css",
     "main.js": "/SinnohDex/static/js/main.84e27e8c.chunk.js",
     "main.js.map": "/SinnohDex/static/js/main.84e27e8c.chunk.js.map",
     "runtime-main.js": "/SinnohDex/static/js/runtime-main.160da37a.js",
@@ -10,14 +10,14 @@
     "static/js/3.5a24619e.chunk.js": "/SinnohDex/static/js/3.5a24619e.chunk.js",
     "static/js/3.5a24619e.chunk.js.map": "/SinnohDex/static/js/3.5a24619e.chunk.js.map",
     "index.html": "/SinnohDex/index.html",
-    "static/css/main.e61f0ead.chunk.css.map": "/SinnohDex/static/css/main.e61f0ead.chunk.css.map",
+    "static/css/main.30ea3ccb.chunk.css.map": "/SinnohDex/static/css/main.30ea3ccb.chunk.css.map",
     "static/js/2.67c6e3b5.chunk.js.LICENSE.txt": "/SinnohDex/static/js/2.67c6e3b5.chunk.js.LICENSE.txt",
     "static/media/logo.6ce24c58.svg": "/SinnohDex/static/media/logo.6ce24c58.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.160da37a.js",
     "static/js/2.67c6e3b5.chunk.js",
-    "static/css/main.e61f0ead.chunk.css",
+    "static/css/main.30ea3ccb.chunk.css",
     "static/js/main.84e27e8c.chunk.js"
   ]
 }
