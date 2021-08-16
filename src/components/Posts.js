@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from 'react';
 
-import Pokedex from 'pokedex-promise-v2';
-const p = new Pokedex();
-
 const Posts = ({ posts, loading, indexOfFirst }) => {
     const getName = (name) => {
         /* HOTFIX: PokeAPI names don't always match with Pokemon Showdown assets */
