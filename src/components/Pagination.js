@@ -19,7 +19,7 @@ const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
         } else {
             return (
                 <li key={number} className="page-item ">
-                    <a onClick={() => paginate(number)} className="page-link">
+                    <a onClick={() => paginate(number)} href="#" className="page-link">
                         {number}
                     </a>
                 </li>
