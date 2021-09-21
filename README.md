@@ -3,7 +3,7 @@
 ## About
 SinnohDex is a React web application that simulates a Pokédex from the Sinnoh region. Built in celebration of Pokémon Brilliant Diamond and Shining Pearl remake games!
 
-[Demo](https://danlee01.github.io/SinnohDex)
+[Demo](https://danlee01.github.io/SinnohDex) (may take a while to load from public API)
 
 ## Features
 - Pokémon types
